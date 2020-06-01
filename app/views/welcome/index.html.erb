@@ -1,0 +1,9 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">VectorBot</h1>
+  <p class="lead">Automate document</p>
+  <% if user_signed_in? %>
+    <button type="button" class="btn btn-success">START NOW</button>
+  <% else %>
+    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, class: "btn btn-danger btn-lg" %>
+  <% end %>
+</div>
