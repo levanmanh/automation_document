@@ -1,0 +1,17 @@
+<div class="container">
+  <% if @spreadsheets %>
+    <%= form_with local: true, method: :get do |form| %>
+      <div class="form-group">
+        <label>
+          Choose your document
+        </label>
+        <%= form.select :document_file_id, options_from_collection_for_select(@spreadsheets, :id, :name), {}, class: "form-control", required: true %>
+      </div>
+      <div class="text-center">
+        <%= form.submit "Run", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to "Sign in to Google Drive", user_google_oauth2_omniauth_authorize_path(scope: "drive, spreadsheets"), class: "btn btn-lg btn-danger" %>
+  <% end %>
+</div>

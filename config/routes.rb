@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   namespace :users do
     root "home#index"
+    resources :documents
   end
 end
