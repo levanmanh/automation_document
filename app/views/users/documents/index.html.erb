@@ -5,7 +5,7 @@
         <label>
           Choose your document
         </label>
-        <%= form.select :document_file_id, options_from_collection_for_select(@spreadsheets, :id, :name), {}, class: "form-control", required: true %>
+        <%= form.select :spreadsheet_id, options_from_collection_for_select(@spreadsheets, :id, :name), {}, class: "form-control", required: true %>
       </div>
       <div class="text-center">
         <%= form.submit "Run", class: "btn btn-primary" %>

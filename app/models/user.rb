@@ -14,7 +14,6 @@ class User < ApplicationRecord
     user.refresh_token = auth.credentials.refresh_token
     user.access_token = auth.credentials.token
     user.expires_at = auth.credentials.expires_at
-    binding.pry
     user.provider_scopes = "#{user.provider_scopes},#{scopes}" if scopes.present?
     user.save
     user
