@@ -54,7 +54,7 @@ module Users
         doc.bookmarks["price"].insert_text_after(result[9])
         source = "#{Rails.root}/public/documents/広報活動委託契約書[#{result[6]}].docx"
         doc.save(source)
-        file_name = "#{result[5]}_#{today_string}"
+        file_name = "広報活動委託契約書[#{result[6]}]_#{today_string}"
         file_metadata = {
           name: file_name,
           mime_type: "application/vnd.google-apps.document",
