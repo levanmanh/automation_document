@@ -38,12 +38,11 @@ module Users
       results.each do |result|
         folder_id = if result[19].include?("open")
                       result[19].split("/")[3].split("=")[1]
-                    elsif result[19].include?("view")
-                      result[19].split("/")[5]
-                    else
+                    elsif result[19].include?("sharing")
                       result[19].split("/")[5].split("?")[0]
+                    else
+                      result[19].split("/")[5]
                     end
-
         time = result[1].split("/")
 
         begin
